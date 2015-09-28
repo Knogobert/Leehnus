@@ -15,6 +15,11 @@ body {
 	border-bottom: 1px solid #303342;
 }
 
+figure img{
+	max-width: 960px;
+	max-height: 360px;
+}
+
 h2{
 	font-family: 'Knewave', sans-serif;
 	font-weight: 400;
