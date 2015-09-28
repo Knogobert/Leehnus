@@ -27,9 +27,9 @@ function leehnus_add_styles_scripts( ) {
 	}
 	
 	//Gets our css files in the header through the wp_head hook
-	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array(), $version );
-	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css', array(), $version );
-	wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', array(), $version );
+	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array());
+	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css', array());
+	wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', array());
 }
 
 add_action('wp_enqueue_scripts', 'leehnus_add_styles_scripts');
