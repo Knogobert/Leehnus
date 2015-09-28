@@ -1,5 +1,21 @@
+body {
+	background-color: #303342;
+	color: #fff;
+}
+
 .page-wrapper {
 	max-width: 960px;
 	margin: 0 auto;
-	background-color: green;
+	padding: 5px;
+	background-color: #363B4E;
+}
+
+.menu {
+	border-top: 1px solid #303342;
+	border-bottom: 1px solid #303342;
+}
+
+h2{
+	font-family: 'Knewave', sans-serif;
+	font-weight: 400;
 }

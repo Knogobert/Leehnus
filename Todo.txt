@@ -1,5 +1,12 @@
 Todo
 
+- Colors
+-- Main #363B4E
+-- Accent1-Pink #FE2244
+-- Accent2-Orange #FE6105
+-- Accent3-Yellow #FFE226
+-- Accent4-Turqoise #26FFA8
+
 - Create main template
 
 - Wireframe - 

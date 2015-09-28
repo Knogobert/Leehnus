@@ -5,21 +5,24 @@
  * @theme Leehnus
  */
 
-//$main_js_part = '/js/main.js';
-//$main_style_part = '/css/main.css';
+// $main_js_part = '/js/main.js';
+// $main_style_part = '/css/main.css';
 
-$version = '1.1';
+// $version = '1.0';
 
-
-
-function my_excerpt_length( $length ) {
-	return 2;
+function leehnus_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
 }
+add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
 
-add_filter('excerpt_length', 'my_excerpt_length');
+function leehnus_excerpt_length( $length ) {
+	return 160;
+}
+add_filter('excerpt_length', 'leehnus_excerpt_length');
 
 function leehnus_add_styles_scripts( ) {
-
 	if( WP_DEBUG == true ) {
 		wp_enqueue_script( 'debug-js', get_template_directory_uri().'/js/debug.js');
 	} else {
@@ -27,14 +30,17 @@ function leehnus_add_styles_scripts( ) {
 	}
 	
 	//Gets our css files in the header through the wp_head hook
-	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array(), $version );
-	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css', array(), $version );
-	wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', array(), $version );
+	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array());
+	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css', array());
+	wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', array());
 }
-
 add_action('wp_enqueue_scripts', 'leehnus_add_styles_scripts');
 
-add_action('init', 'leehnus_add_theme_support');
+function load_fonts() {
+    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Knewave');
+    wp_enqueue_style( 'googleFonts');
+}
+add_action('wp_print_styles', 'load_fonts');
 
 function leehnus_add_theme_support() {
 	add_theme_support('custom-background');
@@ -47,10 +53,9 @@ function leehnus_add_theme_support() {
 		'footer_menu' => 'Footer menu'
 	));
 }
+add_action('init', 'leehnus_add_theme_support');
 
 /* Our custom post types */
-add_action('init', 'leehnus_post_types');
-
 function leehnus_post_types() {
 	register_post_type( 'person', array(
 		'public' => true,
@@ -62,5 +67,6 @@ function leehnus_post_types() {
 		)
 	) );
 }
+add_action('init', 'leehnus_post_types');
 
 ?>

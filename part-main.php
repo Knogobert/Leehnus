@@ -1,6 +1,9 @@
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
+	<div>
+		<?php masterslider(1); ?>
+	</div>
 	<article>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
 		<p><?php the_excerpt(); ?></p>
 	</article>
 <?php endwhile; endif; ?>
