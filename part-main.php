@@ -3,7 +3,7 @@
 		<?php if ( function_exists( 'masterslider' ) ) masterslider(1); ?>
 	</div>
 	<article>
-		<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
+		<h2><?php the_title(); ?></h2>
 		<p><?php the_excerpt(); ?></p>
 	</article>
 <?php endwhile; endif; ?>
