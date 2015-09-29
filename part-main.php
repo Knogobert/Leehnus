@@ -9,6 +9,6 @@
 	<article>
 		<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
 		<?php get_the_post_thumbnail ( 'infoPhoto', 'thumbnail' ) ?>
-		<p><?php the_excerpt(); ?></p>
+		<p><?php the_content(); ?></p>
 	</article>
 <?php endwhile; endif; ?>

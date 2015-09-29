@@ -13,6 +13,39 @@ body {
 .menu {
 	border-top: 1px solid #303342;
 	border-bottom: 1px solid #303342;
+	
+	margin: 0;
+	padding: 0;
+/*
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+*/
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+.menu li {
+    flex: 1 1 auto;
+    align-self: auto;
+}
+
+.menu li a {
+	padding: 1.25rem 0.5rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+/*   color: #333; */
+}
+.menu a:hover, .menu a:focus {
+	background: #ccc;
+	color: black;
 }
 
 figure img{

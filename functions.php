@@ -44,7 +44,12 @@ add_action('wp_print_styles', 'load_fonts');
 
 function leehnus_add_theme_support() {
 	add_theme_support('custom-background');
-	add_theme_support('custom-header');
+	add_theme_support('custom-header', array(
+		'width'         => 60,
+		'height'        => 60,
+		'default-image' => get_template_directory_uri() . '/img/header.png',
+		'uploads'       => true,
+	));
 	add_theme_support('post-thumbnails');
 	add_theme_support('post-formats', array('aside', 'video'));
 
@@ -54,6 +59,8 @@ function leehnus_add_theme_support() {
 	));
 }
 add_action('init', 'leehnus_add_theme_support');
+
+
 
 /* Our custom post types */
 function leehnus_post_types() {

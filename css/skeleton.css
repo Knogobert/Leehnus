@@ -286,7 +286,7 @@ label > .label-body {
 
 
 /* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+–––––––––––––––––––––––––––––––––––––––––––––––––– 
 ul {
   list-style: circle inside; }
 ol {
@@ -302,7 +302,12 @@ ol ul {
   font-size: 90%; }
 li {
   margin-bottom: 1rem; }
+*/
 
+ul{
+	list-style: none;
+	margin: 0;
+}
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -350,7 +355,6 @@ blockquote,
 dl,
 table,
 p,
-ul,
 ol,
 form {
   margin-bottom: 2.5rem; }
