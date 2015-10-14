@@ -1,3 +1,3 @@
 <?php get_header() ?>
-<?php get_template_part( 'part', 'main' ) ?>
+<h1>This is index.php failsafe file</h1>
 <?php get_footer() ?>
