@@ -11,11 +11,17 @@
 		        ?>
 		          <h1><?php the_title() ?></h1>
 		          <div class="contactThumb">
-			          <?php the_post_thumbnail () ?>
+			        <?php the_post_thumbnail () ?>
 		          </div>
 		          <div class='content'>
 		            <?php the_content() ?>
 		          </div>
+		          <form class="contactForm">      
+		            <input name="name" type="text" class="contact-input" placeholder="Name" />   
+		            <input name="email" type="text" class="contact-input" placeholder="Email" />
+		            <textarea name="text" class="contact-input" placeholder="Comment"></textarea>
+		            <input type="submit" value="SUBMIT"/>
+		          </form>
 		        <?php
 		      }
 		    }
