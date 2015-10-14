@@ -56,4 +56,8 @@ figure img{
 h2{
 	font-family: 'Knewave', sans-serif;
 	font-weight: 400;
+	margin-top: 30px;
+}
+.wp-image-23{
+	float: right;  /* Förhindrar händringar i posttype */
 }
