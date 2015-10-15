@@ -10,11 +10,11 @@
 		        $contacts->the_post();
 		        ?>
 		          <h1><?php the_title() ?></h1>
-		          <div class="contactThumb">
-			        <?php the_post_thumbnail () ?>
-		          </div>
 		          <div class='content'>
 		            <?php the_content() ?>
+		          </div>
+		          <div class="contactThumb">
+			        <?php the_post_thumbnail () ?>
 		          </div>
 		          <form class="contactForm">      
 		            <input name="name" type="text" class="contact-input" placeholder="Name" />   

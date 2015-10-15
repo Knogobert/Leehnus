@@ -52,6 +52,7 @@ function leehnus_add_theme_support() {
 	));
 	add_theme_support('post-thumbnails');
 	add_theme_support('post-formats', array('aside', 'video', 'gallery'));
+	add_theme_support( 'woocommerce' );
 
 	register_nav_menus(array(
 		'main_menu' => 'Main menu',
