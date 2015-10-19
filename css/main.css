@@ -57,6 +57,11 @@ figure img{
 	max-height: 360px;
 }
 
+a {
+	color: #1EAEDB;
+	text-decoration: none;
+}
+
 h2{
 	font-family: 'Knewave', sans-serif;
 	font-weight: 400;
@@ -100,9 +105,66 @@ __________________________ */
 /* Shop page
 __________________________ */
 
-.product {
+.products .product {
 	display: inline-block;
+	width: 33%;
 }
+
+.product .images {
+	float: left;
+	overflow: hidden;
+    width: 49%;
+}
+
+.product .summary {
+	float: right;
+    width: 49%;
+}
+
+.product .woocommerce-tabs {
+	clear: both;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  color:white;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+/*   width:100%; */
+  box-sizing: border-box;
+  outline:0;
+}
+.contact-input:focus { border:2px solid #CC4949; }
+
+select {
+  color:white;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin: 0 10px 15px 0;
+/*   width:100%; */
+  box-sizing: border-box;
+  outline:0;
+}
+
 
 /* Contact page
 __________________________ */
