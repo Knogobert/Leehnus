@@ -166,18 +166,35 @@ select {
 }
 
 .shop_table {
-  width: 100%
+  width: 100%;
+  border: 1px solid #FFF;
 }
 
-.product-quantity,
+.product-quantity, /*  minska ärven intuten i shopen, måste fixas */
 .quantity,
 .quantity>.qty {
-  width: 50px;
+  width: 70px;
 }
 .product-thumbnail {
   width: 180px;
 }
-
+.shop_table p{
+  margin-bottom: 0;
+}
+.variation dd{
+  margin: 0;
+}
+.variation dt,
+.variation dd{
+  width: 49%;
+  display: inline-block;
+}
+.shop_attributes{
+  width: 100%;
+}
+.shop_attributes p{
+  margin: 0;
+}
 
 /* Contact page
 __________________________ */

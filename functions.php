@@ -15,7 +15,7 @@ function leehnus_jquery_enqueue() {
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 }
-add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
+//add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
 
 // loads gallery JS if jquery is loaded
 function my_scripts_method() {
@@ -88,5 +88,17 @@ function leehnus_post_types() {
 	) );
 }
 add_action('init', 'leehnus_post_types');
+
+/*
+// 1. Vad som sker i annan kod
+do_filter('gallery_item', $item);
+// 2. Vi fångar upp det "samtalet"
+add_filter('gallery_item', 'our_gallery_item');
+// 3. Ändra om den koden såhär
+function our_gallery_item( $item ) {
+
+return $item;
+}
+*/
 
 ?>
