@@ -165,6 +165,19 @@ select {
   outline:0;
 }
 
+.shop_table {
+  width: 100%
+}
+
+.product-quantity,
+.quantity,
+.quantity>.qty {
+  width: 50px;
+}
+.product-thumbnail {
+  width: 180px;
+}
+
 
 /* Contact page
 __________________________ */

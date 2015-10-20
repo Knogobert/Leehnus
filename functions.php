@@ -17,6 +17,17 @@ function leehnus_jquery_enqueue() {
 }
 add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
 
+// loads gallery JS if jquery is loaded
+function my_scripts_method() {
+	wp_enqueue_script(
+		'masonry.pkgd.min.js',
+		get_stylesheet_directory_uri() . '/js/masonry.pkgd.min.js',
+		array( 'jquery' )
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
 function leehnus_excerpt_length( $length ) {
 	return 160;
 }
