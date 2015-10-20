@@ -74,33 +74,7 @@ h2{
 /* Gallery page
 __________________________ */
 
-#galleryWrapper{
-	overflow: hidden;
-}
 
-#galleryWrapper > div{
-	float: left;
-	margin: 10px 10px 0 10px;
-}
-
-#galleryWrapper > div > div{
-	width: 300px;
-	height:300px;
-}
-
-#galleryWrapper img{
-	width: 100%;
-}
-
-#galleryWrapper img:hover{
-	opacity: 0.5;
-}
-
-@media (max-width: 640px){
-	#galleryWrapper > div > div{
-		height: auto;
-	}
-}
 
 /* Shop page
 __________________________ */
@@ -167,13 +141,15 @@ select {
 
 .shop_table {
   width: 100%;
-  border: 1px solid #FFF;
 }
 
-.product-quantity, /*  minska ärven intuten i shopen, måste fixas */
+.product-quantity, /*  minska även intuten i shopen, måste fixas */
 .quantity,
 .quantity>.qty {
   width: 70px;
+}
+.product-name {
+  width: 320px;
 }
 .product-thumbnail {
   width: 180px;
