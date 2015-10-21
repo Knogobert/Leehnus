@@ -144,7 +144,7 @@ function my_post_gallery($output, $attr) {
     // Here's your actual output, you may customize it to your need
 //  $output = "<div class=\"slideshow-wrapper\">\n";
 //  $output .= "<div class=\"preloader\"></div>\n";
-    $output .= "<div class=\"galleryList\">\n";
+    $output .= "<ul class=\"galleryList\">\n";
 
     // Now you loop through each attachment
     foreach ($attachments as $id => $attachment) {
@@ -154,14 +154,14 @@ function my_post_gallery($output, $attr) {
 //      $img = wp_get_attachment_image_src($id, 'full');
         $ref = wp_get_attachment_link($id, 'true');
 
-        $output .= "<div>\n";
+        $output .= "<li>\n";
         $output .= "<a href=\"{$ref[0]}\">\n";
         $output .= "<img src=\"{$img[0]}\" width=\"{$img[1]}\" height=\"{$img[2]}\" alt=\"\" />\n";
         $output .= "</a>\n";
-        $output .= "</div>\n";
+        $output .= "</li>\n";
     }
 
-    $output .= "</div>\n";
+    $output .= "</ul>\n";
 //  $output .= "</div>\n";
 
     return $output;
