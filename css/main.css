@@ -16,6 +16,7 @@ header{
 
 main#main {
 	overflow: hidden;
+  min-height: 57vh;
 }
 
 .menu {
@@ -211,6 +212,7 @@ __________________________ */
 .contactForm {
 	width: 50%;
 	margin: 0 auto;
+  margin-bottom: 50px;
 }
 @media (max-width: 640px){
 	.contactForm {
@@ -351,7 +353,7 @@ label > .label-body {
 
 
   /* ----- FOOTER ----- */
-
+  
   footer p {
     font-size: 1.2rem;
     line-height: 100px;
