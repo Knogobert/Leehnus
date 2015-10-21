@@ -16,7 +16,7 @@
 		          <div class="contactThumb">
 			        <?php the_post_thumbnail () ?>
 		          </div>
-		          <form class="contactForm">      
+		          <form class="contactForm" action="MAILTO:someone@example.com" method="post" enctype="text/plain">      
 		            <input name="name" type="text" class="contact-input" placeholder="Name" />   
 		            <input name="email" type="text" class="contact-input" placeholder="Email" />
 		            <textarea name="text" class="contact-input" placeholder="Comment"></textarea>
