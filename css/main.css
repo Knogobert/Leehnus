@@ -143,7 +143,7 @@ select {
   width: 100%;
 }
 
-.product-quantity, /*  minska även intuten i shopen, måste fixas */
+.product-quantity,
 .quantity,
 .quantity>.qty {
   width: 70px;
