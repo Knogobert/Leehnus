@@ -102,7 +102,7 @@ return $item;
 */
 
 /* Changes the DOM in the gallery page */
-/*
+
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
     global $post;
@@ -166,5 +166,5 @@ function my_post_gallery($output, $attr) {
 
     return $output;
 }
-*/
+
 ?>

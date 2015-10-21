@@ -76,6 +76,29 @@ h2{
 	float: right;  /* Förhindrar ändringar i posttype */
 }
 
+/* Front page
+__________________________ */
+
+article {
+	overflow: hidden;
+}
+
+.frontContent {
+	float: left;
+	width: 65%;
+}
+
+.frontThumb {
+	float: right;
+	width: 30%;
+	
+}
+
+.frontThumb img {
+	width: 100%;
+	height: 100%;
+}
+
 /* Gallery page
 __________________________ */
 

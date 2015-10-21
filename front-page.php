@@ -9,9 +9,16 @@
 				<?php endif; ?>
 			</figure>
 			<article>
-				<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
-				<?php get_the_post_thumbnail ( 'infoPhoto', 'thumbnail' ) ?>
-				<p><?php the_content(); ?></p>
+				<div class="frontTitle">
+					<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
+				</div>
+				<div class="frontContent">
+					<?php the_content(); ?>
+				</div>
+				
+				<div class="frontThumb">
+			    	<?php the_post_thumbnail () ?>
+		        </div>
 			</article>
 		<?php endwhile; endif; ?>
 	</main><!-- #main -->

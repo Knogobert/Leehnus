@@ -1,5 +1,9 @@
 Todo
 
+- Master Slider plugin replace
+- Responsive galleries
+
+
 - Colors
 -- Main #363B4E
 -- Accent1-Pink #FE2244
