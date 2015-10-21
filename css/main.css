@@ -94,17 +94,21 @@ __________________________ */
 .products .product {
 	float: left;
 	width: 33%;
+  margin-bottom: 50px;
+}
+.products h3{
+  font-size: 25px;
 }
 
 .product .images {
 	float: left;
 	overflow: hidden;
-    width: 49%;
+  width: 49%;
 }
 
 .product .summary {
 	float: right;
-    width: 49%;
+  width: 49%;
 }
 
 .product .woocommerce-tabs {
