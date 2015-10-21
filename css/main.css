@@ -74,13 +74,25 @@ h2{
 /* Gallery page
 __________________________ */
 
-
+.galleryList{
+  overflow: hidden;
+  margin: 0 auto;
+}
+.galleryList>li{
+  float: left;
+  width: 33%;
+}
 
 /* Shop page
 __________________________ */
-
+.products {
+  overflow: hidden;
+}
+li:nth-child(3n+1){
+  clear: left;
+}
 .products .product {
-	display: inline-block;
+	float: left;
 	width: 33%;
 }
 
