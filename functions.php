@@ -33,6 +33,12 @@ function leehnus_excerpt_length( $length ) {
 }
 add_filter('excerpt_length', 'leehnus_excerpt_length');
 
+function load_fonts() {
+    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Bangers|Nato+Sans');
+    wp_enqueue_style( 'googleFonts');
+}
+add_action('wp_print_styles', 'load_fonts');
+
 function leehnus_add_styles_scripts( ) {
 	if( WP_DEBUG == true ) {
 		wp_enqueue_script( 'debug-js', get_template_directory_uri().'/js/debug.js');
@@ -47,11 +53,6 @@ function leehnus_add_styles_scripts( ) {
 }
 add_action('wp_enqueue_scripts', 'leehnus_add_styles_scripts');
 
-function load_fonts() {
-    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Knewave');
-    wp_enqueue_style( 'googleFonts');
-}
-add_action('wp_print_styles', 'load_fonts');
 
 function leehnus_add_theme_support() {
 	add_theme_support('custom-background');
