@@ -2,6 +2,10 @@ body {
 	background-color: #303342;
 	color: #fff;
 }
+header{
+  background-color: #363b4e;
+  padding-top: 20px;
+}
 
 .page-wrapper {
 	max-width: 960px;
