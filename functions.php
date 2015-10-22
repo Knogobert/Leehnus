@@ -99,11 +99,12 @@ function leehnus_post_types() {
 		'public' => true,
 		'labels' => array(
 			'name' => 'Contacts',
-			'singular_name'      => 'Contact' ),
+			'singular_name' => 'Contact' ),
 		'hierarchical' => false,
 		'supports' => array(
 			'title', 'editor', 'thumbnail', 'author'
-		)
+		),
+
 	) );
 }
 add_action('init', 'leehnus_post_types');
@@ -310,7 +311,7 @@ function leehnus_post_gallery($output, $attr) {
  */
 function myplugin_add_meta_box() {
 
-	$screens = array( 'post', 'page' );
+	$screens = array( 'post', 'page', 'contact' );
 
 	foreach ( $screens as $screen ) {
 
