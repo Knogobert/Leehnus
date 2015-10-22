@@ -73,23 +73,7 @@ function leehnus_add_theme_support() {
 }
 add_action('init', 'leehnus_add_theme_support');
 
-/**
- * Register our sidebars and widgetized areas.
- *
- */
-function arphabet_widgets_init() {
 
-    register_sidebar( array(
-        'name'          => 'Footer Social',
-        'id'            => 'footer_social',
-        'before_widget' => '<div>',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="rounded">',
-        'after_title'   => '</h2>',
-    ) );
-
-}
-add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 /* Our custom post types */
 function leehnus_post_types() {
