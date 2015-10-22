@@ -34,7 +34,7 @@ function leehnus_excerpt_length( $length ) {
 add_filter('excerpt_length', 'leehnus_excerpt_length');
 
 function load_fonts() {
-    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Bangers|Nato+Sans');
+    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Bangers|Permanent+Marker');
     wp_enqueue_style( 'googleFonts');
 }
 add_action('wp_print_styles', 'load_fonts');
