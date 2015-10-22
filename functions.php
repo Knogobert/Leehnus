@@ -102,7 +102,14 @@ return $item;
 }
 */
 
-/* Changes the DOM in the gallery page */
+// Shortcode for contact form
+
+function leehnus_contact_form_sc( $atts ) {
+	
+}
+add_shortcode( 'contact', 'leehnus_contact_form_sc' );
+
+// Changes the DOM in the gallery page 
 
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
