@@ -3,6 +3,10 @@ Todo
 - Master Slider plugin replace
 - Responsive galleries
 
+-Fonts (22oct)
+--Menu - Permament Marker
+--Headers - Source Sans Pro 600 italic
+--Body - Source Sans Pro 400
 
 - Colors
 -- Main #363B4E
