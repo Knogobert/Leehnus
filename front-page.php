@@ -10,7 +10,7 @@
 			</figure>
 			<article>
 				<div class="frontTitle">
-					<h2><?php the_title(); ?></h2><!-- <?php the_permalink(); ?> -->
+					<h1><?php the_title(); ?></h1><!-- <?php the_permalink(); ?> -->
 				</div>
 				<div class="frontContent">
 					<?php the_content(); ?>
