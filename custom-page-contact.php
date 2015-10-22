@@ -10,6 +10,8 @@
 		        echo "<style>.contactsContainer {width:630px;}</style>";}
 		        elseif ( $count_posts % 2 == 0 ) { 
 		        echo "<style>.contactsContainer {width:420px;}</style>";}
+		        elseif ( $count_posts == 1 ) { 
+		        echo "<style>.contactsContainer {width:210px;}</style>";}
 		        else { 
 		        echo "<style>.contactsContainer {width:420px;}</style>";}
 			
