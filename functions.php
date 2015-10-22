@@ -285,10 +285,10 @@ function my_post_gallery($output, $attr) {
         $img = wp_get_attachment_image_src($id, 'medium');
 //      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
 //      $img = wp_get_attachment_image_src($id, 'full');
-        $ref = wp_get_attachment_link($id, 'true');
+        $ref = get_attachment_link($id, 'true');
 
         $output .= "<li>\n";
-        $output .= "<a href=\"{$ref[0]}\">\n";
+        $output .= "<a href=\"{$ref}\">\n";
         $output .= "<img src=\"{$img[0]}\" width=\"{$img[1]}\" height=\"{$img[2]}\" alt=\"\" />\n";
         $output .= "</a>\n";
         $output .= "</li>\n";
