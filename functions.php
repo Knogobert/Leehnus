@@ -309,7 +309,8 @@ function leehnus_post_gallery($output, $attr) {
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function myplugin_add_meta_box() {
+function myplugin_add_meta_box($test) {
+
 
 	$screens = array( 'post', 'page', 'contact' );
 

@@ -10,6 +10,9 @@
 	        <center class='content'>
 	        	<?php the_content() ?>
 	        </center>
+	        <center>
+	        	<?php echo get_post_meta( get_the_ID(), 'my-info', true ); ?>
+	        </center>
 		<?php endwhile; endif; ?>
 <!--
 		  <form class="contactForm" action="MAILTO:someone@example.com" method="post" enctype="text/plain">
