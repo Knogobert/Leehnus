@@ -231,10 +231,20 @@ select {
 /* Contact page
 __________________________ */
 
+.contactsContainer {
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.contactCard {
+	float: left;
+	padding: 20px;
+}
+
 .contactThumbSmall {
 	display: block;
-	width: 300px;
-	height: 300px;
+	width: 150px;
+	height: 150px;
 	padding: 1rem;
 	margin: 0 auto;
 	border-radius: 50%;
