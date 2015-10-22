@@ -5,7 +5,7 @@
 				<?php if ( function_exists( 'masterslider' ) ) : ?>
 					<?php masterslider(1); ?>
 				<?php else : ?>
-					<img src="<?php echo get_template_directory_uri(); ?>img/nomasterslider.jpg"/><!-- Put in a standard 960x360 picture here -->
+					<img src="<?php echo get_template_directory_uri(); ?>/img/nomasterslider.jpg"/><!-- Put in a standard 960x360 picture here -->
 				<?php endif; ?>
 			</figure>
 			<article>

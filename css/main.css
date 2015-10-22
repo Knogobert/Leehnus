@@ -20,6 +20,11 @@ main#main {
   min-height: 57vh;
 }
 
+nav {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
 .menu {
 	border-top: 1px solid #303342;
 	border-bottom: 1px solid #303342;
@@ -67,6 +72,10 @@ figure img{
 a {
 	color: #1EAEDB;
 	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+	text-align: center;
 }
 
 h2{
@@ -222,9 +231,18 @@ select {
 /* Contact page
 __________________________ */
 
+.contactThumbSmall {
+	display: block;
+	width: 300px;
+	height: 300px;
+	padding: 1rem;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
 .contactThumb {
 	display: block;
-	width: 30%; /* 20rem? */
+	width: 30%;
 	padding: 1rem;
 	margin: 0 auto;
 }

@@ -8,12 +8,15 @@
 		      while( $contacts->have_posts() ) {
 		        $contacts->the_post();
 		        ?>
-		          <h5 class="contactTitle">
-			          <?php the_title() ?>
-			      </h5>
-		          <center><a href="<?php the_permalink() ?>" class="contactThumb">
-			        <?php the_post_thumbnail () ?>
-		          </a></center>
+		        <div class="contactCard">
+		        	<h5 class="contactTitle">
+			        	<?php the_title() ?>
+			    	</h5>
+			    	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'small' ); ?>
+					<a href="<?php the_permalink() ?>" class="contactThumbSmall" style="background: url(<?php echo $url; ?>) center center; background-size: cover; ">
+			        	
+		        	</a>
+				</div>
 		        <?php
 		      }
 		    }

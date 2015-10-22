@@ -10,7 +10,7 @@
 
 // $version = '1.0';
 
-set_post_thumbnail_size( 50, 50, array( 'center', 'center')  ); // 50 pixels wide by 50 pixels tall, crop from the center 
+set_post_thumbnail_size( 256, 256, array( 'center', 'center')  ); // 50 pixels wide by 50 pixels tall, crop from the center 
 
 function leehnus_jquery_enqueue() {
    wp_deregister_script('jquery');
