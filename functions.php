@@ -77,7 +77,7 @@ add_action('init', 'leehnus_add_theme_support');
  * Register our sidebars and widgetized areas.
  *
  */
-function arphabet_widgets_init() {
+function alphabet_widgets_init() {
 
     register_sidebar( array(
         'name'          => 'Footer Social',
@@ -89,15 +89,15 @@ function arphabet_widgets_init() {
     ) );
 
 }
-add_action( 'widgets_init', 'arphabet_widgets_init' );
+add_action( 'widgets_init', 'alphabet_widgets_init' );
 
 /* Our custom post types */
 function leehnus_post_types() {
 	register_post_type( 'contact', array(
 		'public' => true,
 		'labels' => array(
-			'name' => 'Leehnus Contacts',
-			'singular_name'      => 'Leehnus Contact' ),
+			'name' => 'Contacts',
+			'singular_name'      => 'Contact' ),
 		'hierarchical' => false,
 		'supports' => array(
 			'title', 'editor', 'thumbnail', 'author'
@@ -236,8 +236,8 @@ add_shortcode( 'contact', 'leehnus_contact_form_sc' );
 // Changes the DOM in the gallery page
 //___________________________________________________
 
-add_filter('post_gallery', 'my_post_gallery', 10, 2);
-function my_post_gallery($output, $attr) {
+add_filter('post_gallery', 'leehnus_post_gallery', 10, 2);
+function leehnus_post_gallery($output, $attr) {
     global $post;
 
     if (isset($attr['orderby'])) {
