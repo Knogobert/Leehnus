@@ -1,6 +1,7 @@
 body {
 	background-color: #303342;
 	color: #fff;
+  min-width: 320px;
 }
 header{
   background-color: #363b4e;
@@ -46,7 +47,7 @@ main#main {
 .menu li a {
 	padding: 1.25rem 0.5rem;
 	font-family: 'Permanent Marker', cursive;
-  letter-spacing: 1.2px;
+  letter-spacing: 2.8px;
 	font-size: 2.5rem;
 	font-weight: bold;
 	text-decoration: none;
@@ -69,9 +70,10 @@ a {
 }
 
 h2{
-	font-family: 'Luckiest Guy', cursive;
-  letter-spacing: 1.2px;
+	/*font-family: 'Permanent Marker', cursive;
+  letter-spacing: 1.2px;*/
 	margin-top: 30px;
+  text-align: center;
 }
 .wp-image-23{
 	float: right;  /* Förhindrar ändringar i posttype */
@@ -387,4 +389,16 @@ label > .label-body {
     margin-bottom: 0px;
   }
   
-  /* KOMMENTAREREAR */
+
+
+/*  RESPONSIV 320PX  */
+@media (max-width: 480px){
+  .menu li a{
+    padding: 1.25rem 0.2rem;
+    letter-spacing: 1.2px;
+    font-size: 1.8rem;
+  }
+  footer p {
+    line-height: 50px;
+  }
+}
