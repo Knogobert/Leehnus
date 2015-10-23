@@ -93,6 +93,9 @@ h2{
 	margin-top: 30px;
   text-align: center;
 }
+h5 {
+	margin-bottom: 1rem;
+}
 .wp-image-23{
 	float: right;  /* Förhindrar ändringar i posttype */
 }
@@ -129,8 +132,20 @@ __________________________ */
 }
 .galleryList>li{
   float: left;
-  width: 33%;
+  width: 31.333%;
+  margin: 1%;
 }
+.galleryList>li img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640px){
+	.galleryList>li {
+		width: 48%;
+	}
+}
+
 
 /* Shop page
 __________________________ */
@@ -142,13 +157,31 @@ __________________________ */
 }
 .products .product {
 	float: left;
-	width: 33%;
-  margin-bottom: 50px;
+	width: 31.3333%;
+	margin: 1%;
+	margin-bottom: 50px;
+}
+.products img {
+	width: 100%;
+	height: 100%;
 }
 .products h3{
   font-size: 25px;
 }
 
+@media (max-width: 640px){
+	.products .product {
+		width: 48%;
+	}
+	.products .product:nth-child(3n+1){
+		clear: none;
+	}
+	.products .product:nth-child(2n+1){
+		clear: left;
+	}
+}
+
+/* Single product page* */
 .product .images {
 	float: left;
 	overflow: hidden;
@@ -255,7 +288,6 @@ __________________________ */
 	width: 150px;
 	height: 150px;
 	padding: 1rem;
-	margin: 0 auto;
 	border-radius: 50%;
 }
 
@@ -276,11 +308,6 @@ __________________________ */
 	width: 50%;
 	margin: 0 auto;
   margin-bottom: 50px;
-}
-@media (max-width: 640px){
-	.contactForm {
-		width: 100%;
-	}
 }
 
 .contact-input {
@@ -313,6 +340,20 @@ __________________________ */
   margin-top:-4px;
 }
 
+@media (max-width: 640px){
+	.contactCard {
+		padding: 2vw;
+	}
+	.contactThumbSmall {
+		width: 20vw;
+		height: 20vw;
+		padding: 2vw;
+	}
+	.contactForm {
+		width: 100%;
+	}
+}
+
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
@@ -322,7 +363,7 @@ input[type="reset"],
 input[type="button"] {
   display: inline-block;
   height: 4rem;
-  padding: 0 3rem;
+  padding: 0 2.5rem;
   margin: 0.5rem;
   color:white;
   text-align: center;
@@ -441,6 +482,7 @@ label > .label-body {
     margin: 0 auto;
     width: 30px;
   }
+<<<<<<< HEAD
 
   .aps-each-icon:first-child {
     float: left;
@@ -451,6 +493,10 @@ label > .label-body {
 
 
 /*  RESPONSIV MAX-WIDTH 480PX  */
+=======
+
+/*  RESPONSIV Small */
+>>>>>>> origin/master
 @media (max-width: 480px){
   .menu li a{
     padding: 1.2rem 0.3rem;
