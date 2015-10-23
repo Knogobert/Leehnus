@@ -309,16 +309,16 @@ function leehnus_post_gallery($output, $attr) {
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function myplugin_add_meta_box($test) {
+function myplugin_add_meta_box() {
 
 
-	$screens = array( 'post', 'page', 'contact' );
+	$screens = array( 'contact' );
 
 	foreach ( $screens as $screen ) {
 
 		add_meta_box(
 			'myplugin_sectionid',
-			__( 'My Post Section Title', 'myplugin_textdomain' ),
+			__( 'E-mail', 'myplugin_textdomain' ),
 			'myplugin_meta_box_callback',
 			$screen
 		);
@@ -343,7 +343,7 @@ function myplugin_meta_box_callback( $post ) {
 	$value = get_post_meta( $post->ID, '_my_meta_value_key', true );
 
 	echo '<label for="myplugin_new_field">';
-	_e( 'Description for this field', 'myplugin_textdomain' );
+	_e( 'Add your e-mail', 'myplugin_textdomain' );
 	echo '</label> ';
 	echo '<input type="text" id="myplugin_new_field" name="myplugin_new_field" value="' . esc_attr( $value ) . '" size="25" />';
 }
