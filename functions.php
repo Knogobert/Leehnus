@@ -22,8 +22,8 @@ function leehnus_jquery_enqueue() {
 // loads gallery JS if jquery is loaded
 function my_scripts_method() {
 	wp_enqueue_script(
-		'masonry.pkgd.min.js',
-		get_stylesheet_directory_uri() . '/js/masonry.pkgd.min.js',
+		'jquery.bxslider.min.js',
+		get_stylesheet_directory_uri() . '/js/jquery.bxslider.min.js',
 		array( 'jquery' )
 	);
 }
