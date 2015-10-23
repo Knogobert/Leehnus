@@ -7,11 +7,11 @@
 			// Checks how many posts there are and styles the contactsContainer to it.
 			$count_posts = wp_count_posts('contact')->publish; 
 				if ( $count_posts % 3 == 0 ) { 
-		        echo "<style>.contactsContainer {width:630px;}</style>";}
+		        echo "<style>.contactsContainer {width:630px;} @media (max-width: 640px){.contactsContainer{width:84vw;}</style>";}
 		        elseif ( $count_posts % 2 == 0 ) { 
-		        echo "<style>.contactsContainer {width:420px;}</style>";}
+		        echo "<style>.contactsContainer {width:420px;} @media (max-width: 640px){.contactsContainer{width:56vw;}}</style>";}
 		        elseif ( $count_posts == 1 ) { 
-		        echo "<style>.contactsContainer {width:210px;}</style>";}
+		        echo "<style>.contactsContainer {width:210px;} @media (max-width: 640px){.contactsContainer{width:28vw;}}</style>";}
 		        else { 
 		        echo "<style>.contactsContainer {width:420px;}</style>";}
 			
