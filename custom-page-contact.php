@@ -1,3 +1,4 @@
+<!-- custom-page-contact.php -->
 <?php 
 /* Template name: Contacts */
 	get_header() ?>

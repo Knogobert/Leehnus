@@ -9,7 +9,7 @@
 <body>
 	<header>
 		<center>
-			<a href="<?php bloginfo('url'); ?>">
+			<a href="<?php echo esc_url( home_url() ) ; ?>">
 				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="Home" />
 			</a>
 		</center>

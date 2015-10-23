@@ -1,3 +1,4 @@
+<!-- single-contact.php -->
 <?php get_header() ?>
 <!-- Store key value to print where you want it use $email. -->
 <?php $email = get_post_meta( get_the_ID(), '_my_meta_value_key', true ); ?>
