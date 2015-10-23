@@ -17,13 +17,13 @@ function leehnus_jquery_enqueue() {
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 }
-//add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
+add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
 
 // loads gallery JS if jquery is loaded
 function my_scripts_method() {
 	wp_enqueue_script(
-		'jquery.bxslider.min.js',
-		get_stylesheet_directory_uri() . '/js/jquery.bxslider.min.js',
+		'jquery.slides.min.js',
+		get_stylesheet_directory_uri() . '/js/jquery.slides.min.js',
 		array( 'jquery' )
 	);
 }
