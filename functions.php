@@ -121,121 +121,6 @@ return $item;
 }
 */
 
-// Shortcode for contact form
-//___________________________________________________
-
-function leehnus_get_the_ip() {
-    if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
-        return $_SERVER["HTTP_X_FORWARDED_FOR"];
-    }
-    elseif (isset($_SERVER["HTTP_CLIENT_IP"])) {
-        return $_SERVER["HTTP_CLIENT_IP"];
-    }
-    else {
-        return $_SERVER["REMOTE_ADDR"];
-    }
-}
-
-function leehnus_contact_form_sc( $atts ) {
-	extract( shortcode_atts( array(
-	    // if you don't provide an e-mail address, the shortcode will pick the e-mail address of the admin:
-	    "email" => get_bloginfo( 'admin_email' ),
-	    "subject" => "",
-	    "label_name" => "Name",
-	    "label_email" => "E-mail",
-	    "label_subject" => "Subject",
-	    "label_message" => "Message",
-	    "label_submit" => "Submit",
-	    // the error message when at least one of the required fields are empty:
-	    "error_empty" => "Please fill in all the required fields.",
-	    // the error message when the e-mail address is not valid:
-	    "error_noemail" => "Please enter a valid e-mail address.",
-	    // and the success message when the e-mail is sent:
-	    "success" => "Thanks for your e-mail! We'll get back to you as soon as we can."
-	), $atts ) );
-	
-	// if there's no $result text (meaning there's no error or success, meaning the user just opened the page and did nothing) there's no need to show the $info variable
-	if ( $result != "" ) {
-	    $info = '<div class="info">' . $result . '</div>';
-	}
-	// anyways, let's build the form! (remember that we're using shortcode attributes as variables with their names) dont mind this: ' . get_permalink() . '
-	$email_form = '<form class="contactForm" method="post" action="">
-	    <input placeholder="' . $label_name . '" type="text" name="your_name" id="cf_name" class="contact-input" size="50" maxlength="50" value="' . $form_data['your_name'] . '" />
-	    <input placeholder="' . $label_email . '" type="text" name="email" id="cf_email" class="contact-input" size="50" maxlength="50" value="' . $form_data['email'] . '" />
-	    <textarea placeholder="' . $label_message . '" name="message" id="cf_message" class="contact-input">' . $form_data['message'] . '</textarea>
-	    <input type="submit" value="' . $label_submit . '" name="send" id="cf_send" class="contact-input" />
-	</form>';
-	
-	
-	// if the <form> element is POSTed, run the following code
-	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-	    $error = false;
-	    // set the "required fields" to check
-	    $required_fields = array( "your_name", "email", "message", );
-	 
-	    // this part fetches everything that has been POSTed, sanitizes them and lets us use them as $form_data['subject']
-	    foreach ( $_POST as $field => $value ) {
-	        if ( get_magic_quotes_gpc() ) {
-	            $value = stripslashes( $value );
-	        }
-	        $form_data[$field] = strip_tags( $value );
-	    }
-	 
-	    // if the required fields are empty, switch $error to TRUE and set the result text to the shortcode attribute named 'error_empty'
-	    foreach ( $required_fields as $required_field ) {
-	        $value = trim( $form_data[$required_field] );
-	        if ( empty( $value ) ) {
-	            $error = true;
-	            $result = $error_empty;
-	        }
-	    }
-	 
-	    // and if the e-mail is not valid, switch $error to TRUE and set the result text to the shortcode attribute named 'error_noemail'
-	    if ( ! is_email( $form_data['email'] ) ) {
-	        $error = true;
-	        $result = $error_noemail;
-	    }
-	 
-	    if ( $error == false ) {
-	        $email_subject = "[" . get_bloginfo( 'name' ) . "] " . "Contact Form";
-	        $email_message = $form_data['message'] . "\n\nIP: " . leehnus_get_the_ip();
-	        $headers  = "From: " . $form_data['name'] . " <" . $form_data['email'] . ">\n";
-	        $headers .= "Content-Type: text/plain; charset=UTF-8\n";
-	        $headers .= "Content-Transfer-Encoding: 8bit\n";
-	        wp_mail( $email, $email_subject, $email_message, $headers );
-	        $result = $success;
-	        $sent = true;
-	    }
-	    // but if $error is still FALSE, put together the POSTed variables and send the e-mail!
-	    if ( $error == false ) {
-	        // get the website's name and puts it in front of the subject
-	        $email_subject = "[" . get_bloginfo( 'name' ) . "] " . $form_data['subject'];
-	        // get the message from the form and add the IP address of the user below it
-	        $email_message = $form_data['message'] . "\n\nIP: " . leehnus_get_the_ip();
-	        // set the e-mail headers with the user's name, e-mail address and character encoding
-	        $headers  = "From: " . $form_data['your_name'] . " <" . $form_data['email'] . ">\n";
-	        $headers .= "Content-Type: text/plain; charset=UTF-8\n";
-	        $headers .= "Content-Transfer-Encoding: 8bit\n";
-	        // send the e-mail with the shortcode attribute named 'email' and the POSTed data
-	        wp_mail( $email, $email_subject, $email_message, $headers );
-	        // and set the result text to the shortcode attribute named 'success'
-	        $result = $success;
-	        // ...and switch the $sent variable to TRUE
-	        $sent = true;
-	    }
-	}
-	
-	if ( $sent == true ) {
-		echo "<script type='text/javascript'>alert('Your message has been sent!');</script>";
-	    return $info . $email_form;
-	} else {
-	    return $info . $email_form;
-	}
-}
-add_shortcode( 'contact', 'leehnus_contact_form_sc' );
-
-
-
 // Changes the DOM in the gallery page
 //___________________________________________________
 
@@ -309,7 +194,7 @@ function leehnus_post_gallery($output, $attr) {
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function myplugin_add_meta_box() {
+function leehnus_add_meta_box() {
 
 
 	$screens = array( 'contact' );
@@ -317,24 +202,24 @@ function myplugin_add_meta_box() {
 	foreach ( $screens as $screen ) {
 
 		add_meta_box(
-			'myplugin_sectionid',
-			__( 'E-mail', 'myplugin_textdomain' ),
-			'myplugin_meta_box_callback',
+			'leehnus_sectionid',
+			__( 'E-mail', 'leehnus_textdomain' ),
+			'leehnus_meta_box_callback',
 			$screen
 		);
 	}
 }
-add_action( 'add_meta_boxes', 'myplugin_add_meta_box' );
+add_action( 'add_meta_boxes', 'leehnus_add_meta_box' );
 
 /**
  * Prints the box content.
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function myplugin_meta_box_callback( $post ) {
+function leehnus_meta_box_callback( $post ) {
 
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'myplugin_save_meta_box_data', 'myplugin_meta_box_nonce' );
+	wp_nonce_field( 'leehnus_save_meta_box_data', 'leehnus_meta_box_nonce' );
 
 	/*
 	 * Use get_post_meta() to retrieve an existing value
@@ -342,10 +227,10 @@ function myplugin_meta_box_callback( $post ) {
 	 */
 	$value = get_post_meta( $post->ID, '_my_meta_value_key', true );
 
-	echo '<label for="myplugin_new_field">';
-	_e( 'Add your e-mail', 'myplugin_textdomain' );
+	echo '<label for="leehnus_new_field">';
+	_e( 'Add your e-mail', 'leehnus_textdomain' );
 	echo '</label> ';
-	echo '<input type="text" id="myplugin_new_field" name="myplugin_new_field" value="' . esc_attr( $value ) . '" size="25" />';
+	echo '<input type="text" id="leehnus_new_field" name="leehnus_new_field" value="' . esc_attr( $value ) . '" size="25" />';
 }
 
 /**
@@ -353,7 +238,7 @@ function myplugin_meta_box_callback( $post ) {
  *
  * @param int $post_id The ID of the post being saved.
  */
-function myplugin_save_meta_box_data( $post_id ) {
+function leehnus_save_meta_box_data( $post_id ) {
 
 	/*
 	 * We need to verify this came from our screen and with proper authorization,
@@ -361,12 +246,12 @@ function myplugin_save_meta_box_data( $post_id ) {
 	 */
 
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['myplugin_meta_box_nonce'] ) ) {
+	if ( ! isset( $_POST['leehnus_meta_box_nonce'] ) ) {
 		return;
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['myplugin_meta_box_nonce'], 'myplugin_save_meta_box_data' ) ) {
+	if ( ! wp_verify_nonce( $_POST['leehnus_meta_box_nonce'], 'leehnus_save_meta_box_data' ) ) {
 		return;
 	}
 
@@ -392,16 +277,49 @@ function myplugin_save_meta_box_data( $post_id ) {
 	/* OK, it's safe for us to save the data now. */
 	
 	// Make sure that it is set.
-	if ( ! isset( $_POST['myplugin_new_field'] ) ) {
+	if ( ! isset( $_POST['leehnus_new_field'] ) ) {
 		return;
 	}
 
 	// Sanitize user input.
-	$my_data = sanitize_text_field( $_POST['myplugin_new_field'] );
+	$my_data = sanitize_text_field( $_POST['leehnus_new_field'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, '_my_meta_value_key', $my_data );
 }
-add_action( 'save_post', 'myplugin_save_meta_box_data' );
+add_action( 'save_post', 'leehnus_save_meta_box_data' );
+
+// WOOCOMMERCE REST API STUFF
+// _____________________________________________________
+
+/* 
+ $consumer_key = 'ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81'; // Add your own Consumer Key here
+ $consumer_secret = 'cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9'; // Add your own Consumer Secret here
+ $store_url = 'testy.dev/'; // Add the home URL to the store you want to connect to here
+*/
+
+/*require_once( 'lib/woocommerce-api.php' );
+$options = array(
+	'debug'           => false,
+	'return_as_array' => false,
+	'validate_url'    => false,
+	'timeout'         => 3,
+	'ssl_verify'      => false,
+);
+try {
+	$client = new WC_API_Client( 'http://testy.dev/', 'ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81', 'cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9', $options );
+	
+	print_r( $client);
+	//print_r( $client->customers->get( $customer_id ) );
+	//print_r( $client->products->get_count() );
+	
+} catch ( WC_API_Client_Exception $e ) {
+	echo $e->getMessage() . PHP_EOL;
+	echo $e->getCode() . PHP_EOL;
+	if ( $e instanceof WC_API_Client_HTTP_Exception ) {
+		print_r( $e->get_request() );
+		print_r( $e->get_response() );
+	}
+}*/
 
 ?>

@@ -185,12 +185,26 @@ __________________________ */
 .product .images {
 	float: left;
 	overflow: hidden;
-  width: 49%;
+	width: 49%;
+}
+
+.product .images img {
+	width: 100%;
+	height: 100%;
 }
 
 .product .summary {
 	float: right;
-  width: 49%;
+	width: 49%;
+}
+
+@media (max-width: 480px){
+	.product .images {
+		width: 100%;
+	}
+	.product .summary {
+		width: 100%;
+	}
 }
 
 .product .woocommerce-tabs {

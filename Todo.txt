@@ -1,7 +1,7 @@
 Todo
 
-- Master Slider plugin replace
-- Responsive galleries
+consumer key: ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81
+consumer secret: cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9
 
 -Fonts (22oct)
 --Menu - Permament Marker
