@@ -39,7 +39,8 @@
 			 $(function(){
       $("#slides").slidesjs({
         width: 960,
-        height: 360
+        height: 320,
+        pagination: false
       });
     });
 		</script>

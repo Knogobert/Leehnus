@@ -150,6 +150,24 @@ __________________________ */
 	}
 }
 
+/* Slider in frontpage
+__________________________ */
+.slidesjs-navigation{
+  margin: 15px 0 20px 0;
+}
+.slidesjs-previous{
+  background-image: url(../img/previous.png);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+.slidesjs-next{
+  background-image: url(../img/next.png);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
 
 /* Shop page
 __________________________ */
