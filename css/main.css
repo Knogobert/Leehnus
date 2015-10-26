@@ -134,6 +134,10 @@ __________________________ */
   float: left;
   width: 31.333%;
   margin: 1%;
+  opacity: 0.7;
+}
+.galleryList>li:hover{
+  opacity: 1;
 }
 .galleryList>li img {
   width: 100%;
@@ -180,6 +184,7 @@ __________________________ */
 		clear: left;
 	}
 }
+
 
 /* Single product page* */
 .product .images {
@@ -253,6 +258,9 @@ select {
 
 .shop_table {
   width: 100%;
+}
+.woocommerce table.shop_table{
+  border:none;
 }
 
 .product-quantity,
@@ -370,6 +378,9 @@ __________________________ */
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.woocommerce a.button.alt,
+.woocommerce a.button,
+.checkout-button,
 .button,
 button,
 input[type="submit"],
@@ -393,12 +404,19 @@ input[type="button"] {
   cursor: pointer;
   box-sizing: border-box;
   background: #CC6666;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+}
+.woocommerce a.button.alt:hover,
+.woocommerce a.button:hover,
+.checkout-button:hover,
 .button:hover,
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
+.woocommerce a.button.alt:focus,
+.woocommerce a.button:focus,
+.checkout-button:focus,
 .button:focus,
 button:focus,
 input[type="submit"]:focus,
