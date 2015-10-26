@@ -64,6 +64,9 @@ nav {
 	background: #1EAEDB;
 	color: #363B4E;
 }
+.footer_menu{
+  float: right;
+}
 
 figure img{
 	max-width: 960px;
@@ -189,6 +192,9 @@ __________________________ */
 }
 .products h3{
   font-size: 25px;
+}
+.actions{
+  border: none;
 }
 
 @media (max-width: 640px){
