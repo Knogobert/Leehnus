@@ -20,7 +20,7 @@ function leehnus_jquery_enqueue() {
 add_action("wp_enqueue_scripts", "leehnus_jquery_enqueue", 11);
 
 // loads gallery JS if jquery is loaded
-function my_scripts_method() {
+function leehnus_scripts_method() {
 	wp_enqueue_script(
 		'jquery.slides.min.js',
 		get_stylesheet_directory_uri() . '/js/jquery.slides.min.js',
@@ -28,7 +28,7 @@ function my_scripts_method() {
 	);
 }
 
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+add_action( 'wp_enqueue_scripts', 'leehnus_scripts_method' );
 
 function leehnus_excerpt_length( $length ) {
 	return 160;
@@ -171,7 +171,7 @@ function leehnus_post_gallery($output, $attr) {
     foreach ($attachments as $id => $attachment) {
         // Fetch the thumbnail (or full image, it's up to you)
         $img = wp_get_attachment_image_src($id, 'medium');
-//      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
+//      $img = wp_get_attachment_image_src($id, 'leehnus-custom-image-size');
 //      $img = wp_get_attachment_image_src($id, 'full');
         $ref = get_attachment_link($id, 'true');
 
@@ -225,7 +225,7 @@ function leehnus_meta_box_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$value = get_post_meta( $post->ID, '_my_meta_value_key', true );
+	$value = get_post_meta( $post->ID, '_leehnus_meta_value_key', true );
 
 	echo '<label for="leehnus_new_field">';
 	_e( 'Add your e-mail', 'leehnus_textdomain' );
@@ -282,23 +282,31 @@ function leehnus_save_meta_box_data( $post_id ) {
 	}
 
 	// Sanitize user input.
-	$my_data = sanitize_text_field( $_POST['leehnus_new_field'] );
+	$leehnus_data = sanitize_text_field( $_POST['leehnus_new_field'] );
 
 	// Update the meta field in the database.
-	update_post_meta( $post_id, '_my_meta_value_key', $my_data );
+	update_post_meta( $post_id, '_leehnus_meta_value_key', $leehnus_data );
 }
 add_action( 'save_post', 'leehnus_save_meta_box_data' );
 
 // WOOCOMMERCE REST API STUFF
 // _____________________________________________________
 
-/* 
+/*
+Home
+ $consumer_key = 'ck_a11f79f316bbbfb6a83c387116a7dc36d76aed1a';
+ $consumer_secret = 'cs_48e3dd9684e82a13cb218639128b847e33068160';
+ $store_url = 'testy.dev/';
+*/
+
+/*
+Macbook
  $consumer_key = 'ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81'; // Add your own Consumer Key here
  $consumer_secret = 'cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9'; // Add your own Consumer Secret here
  $store_url = 'testy.dev/'; // Add the home URL to the store you want to connect to here
 */
 
-/*require_once( 'lib/woocommerce-api.php' );
+require_once( 'lib/woocommerce-api.php' );
 $options = array(
 	'debug'           => false,
 	'return_as_array' => false,
@@ -307,11 +315,11 @@ $options = array(
 	'ssl_verify'      => false,
 );
 try {
-	$client = new WC_API_Client( 'http://testy.dev/', 'ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81', 'cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9', $options );
+	$client = new WC_API_Client( 'http://testy.dev/', 'ck_a11f79f316bbbfb6a83c387116a7dc36d76aed1a', 'cs_48e3dd9684e82a13cb218639128b847e33068160', $options );
 	
-	print_r( $client);
+	//print_r( $client);
 	//print_r( $client->customers->get( $customer_id ) );
-	//print_r( $client->products->get_count() );
+	print_r( $client->products->get_count() );
 	
 } catch ( WC_API_Client_Exception $e ) {
 	echo $e->getMessage() . PHP_EOL;
@@ -320,6 +328,6 @@ try {
 		print_r( $e->get_request() );
 		print_r( $e->get_response() );
 	}
-}*/
+}
 
 ?>
