@@ -45,10 +45,13 @@ function leehnus_add_styles_scripts( ) {
 	if( WP_DEBUG == true ) {
 		wp_enqueue_script( 'debug-js', get_template_directory_uri().'/js/debug.js');
 	} else {
-		wp_enqueue_script( 'main-js', get_template_directory_uri().'/js/main.js');
+		wp_enqueue_script( 'live-js', get_template_directory_uri().'/js/live.js');
 	}
 	
-	//Gets our css files in the header through the wp_head hook
+	// Gets the js files in the header through the wp_head hook
+	wp_enqueue_script( 'main-js', get_template_directory_uri().'/js/main.js');
+	
+	// Gets the css files in the header through the wp_head hook
 	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array());
 	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css', array());
 	wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', array());
@@ -79,7 +82,7 @@ add_action('init', 'leehnus_add_theme_support');
  * Register our sidebars and widgetized areas.
  *
  */
-function alphabet_widgets_init() {
+function leehnus_widgets_init() {
 
     register_sidebar( array(
         'name'          => 'Footer Social',
@@ -91,7 +94,7 @@ function alphabet_widgets_init() {
     ) );
 
 }
-add_action( 'widgets_init', 'alphabet_widgets_init' );
+add_action( 'widgets_init', 'leehnus_widgets_init' );
 
 /* Our custom post types */
 function leehnus_post_types() {
@@ -289,6 +292,35 @@ function leehnus_save_meta_box_data( $post_id ) {
 }
 add_action( 'save_post', 'leehnus_save_meta_box_data' );
 
+// Search field
+// _____________________________________________________
+
+function leehnus_search(){
+	$query_string = $_GET['q'];
+
+	$s = new WP_Query(array( 's' => $query_string ));
+
+	echo '<ul>';
+	while($s->have_posts()){ 
+		$s->the_post();?>
+
+		<li>
+
+			<?php the_post_thumbnail(); ?>
+
+			<?php the_title(); ?>
+			
+		</li>
+
+	<?php }
+	echo '</ul>';
+
+	wp_die();
+}
+
+add_action('wp_ajax_search', 'leehnus_search');
+add_action('wp_ajax_nopriv_search', 'leehnus_search');
+
 // WOOCOMMERCE REST API STUFF
 // _____________________________________________________
 
@@ -304,7 +336,7 @@ Macbook
  $consumer_key = 'ck_15e0cd32645659600b8171ced9a9f9f3cef8ed81'; // Add your own Consumer Key here
  $consumer_secret = 'cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9'; // Add your own Consumer Secret here
  $store_url = 'testy.dev/'; // Add the home URL to the store you want to connect to here
-*/
+*
 
 require_once( 'lib/woocommerce-api.php' );
 $options = array(
@@ -329,5 +361,5 @@ try {
 		print_r( $e->get_response() );
 	}
 }
-
+*/
 ?>

@@ -9,12 +9,12 @@ get_header() ?>
         	</div>
         <?php endwhile; ?>
     </main><!-- #main -->
-    <script src="isotope.js"/>
+    <!-- <script src="isotope.js"/>
     <script>
         $(function(){
             $('#galleryWrapper').isotope({
                 itemSelector: '.gallery-item'
             })
         });
-    </script>
+    </script>-->
 <?php get_footer() ?>
