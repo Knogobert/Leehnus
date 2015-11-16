@@ -8,16 +8,12 @@
 </head>
 <body>
 	<header>
-		<center>
-			<a href="<?php echo esc_url( home_url() ) ; ?>">
+		<div id="logoContainer">
+			<a href="<?php echo esc_url( home_url() ) ; ?>" style="width:<?php echo get_custom_header()->width; ?>px;">
 				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="Home" />
 			</a>
-		</center>
-		<!-- CUSTOM 4 rows below-->
-		<form id="searchbar">
-			<input type="text" placeholder="Live Search" onkeyup="showResult(this.value)">		
-		</form>
-		<div id="livesearch"></div> <!---Här syns resultaten-->
+			<?php get_search_form(); ?>
+		</div>
 		<?php wp_nav_menu( array(
 			'menu' => 'main menu',
 			'theme_location' => 'main_menu',

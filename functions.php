@@ -67,9 +67,10 @@ function leehnus_add_theme_support() {
 		'default-image' => get_template_directory_uri() . '/img/header.png',
 		'uploads'       => true,
 	));
+	add_theme_support('html5', array('search-form'));
 	add_theme_support('post-thumbnails');
 	add_theme_support('post-formats', array('aside', 'video', 'gallery'));
-	add_theme_support( 'woocommerce' );
+	add_theme_support('woocommerce');
 
 	register_nav_menus(array(
 		'main_menu' => 'Main menu',
@@ -320,6 +321,7 @@ function leehnus_search(){
 
 add_action('wp_ajax_search', 'leehnus_search');
 add_action('wp_ajax_nopriv_search', 'leehnus_search');
+
 
 // WOOCOMMERCE REST API STUFF
 // _____________________________________________________

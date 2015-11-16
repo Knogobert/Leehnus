@@ -1,10 +1,11 @@
 function showResult(str) {
 
   if (str.length==0) { 
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.display="none";
-
+    document.getElementById("searchFieldHeader").style.width=96+"px";
+	
     return;
+  }else{
+	document.getElementById("searchFieldHeader").style.width=99+"px";
   }
 
   if (window.XMLHttpRequest) {
@@ -18,12 +19,28 @@ function showResult(str) {
 
   xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-
-      document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
-      document.getElementById("livesearch").style.display="block";
+		// Do something with it
     }
   }
 
   xmlhttp.open("POST","/wordpress/wp-admin/admin-ajax.php?action=search&q="+str,true); //Gets wp-admins ajax
   xmlhttp.send();
 }
+
+// Defines the width depending on the string length of search entry
+window.onload = function() {
+	var sfh = document.getElementById('searchFieldHeader');
+	if (sfh){
+		sfh.addEventListener("keyup", function(){
+			if (sfh.length==0) { 
+			    sfh.style.width = 90+"px";
+			}else{
+				if (sfh.value.length>5){
+					sfh.style.width = (10*sfh.value.length)+40+"px";
+				}else {
+					sfh.style.width = 90+"px";
+				}
+			}
+		});
+	}
+};

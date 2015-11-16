@@ -19,3 +19,5 @@ consumer secret: cs_ea812ece722de9dbc6d1dad3d7ed8854c61746e9
 
 - Wireframe - 
 https://wireframe.cc/tzbkvI
+
+- Make a better and more semantic todo list

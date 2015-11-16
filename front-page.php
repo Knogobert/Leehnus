@@ -8,7 +8,7 @@
 				</div>
 				<div id="slides">
 				<?php
-				$pageID = 602; // This is must be replaced with your page ID
+				$pageID = get_the_ID(); // This is must be replaced with your page ID
 				$args = array(
 				    'post_type' => 'attachment',
 				    'numberposts' => null,
@@ -19,10 +19,10 @@
 				if ($attachments) {
 				    foreach ($attachments as $attachment) {
 				        $imageAlt = $attachment->post_title;
-				                $attachment_id = $attachment->ID; // attachment ID
-				                $image_attributes = wp_get_attachment_image_src( $attachment_id , 'full' ); // returns an array
-				                echo '<img src="'.$image_attributes[0].'" alt="'.$imageAlt.'"/>';
-				 }
+		                $attachment_id = $attachment->ID; // attachment ID
+		                $image_attributes = wp_get_attachment_image_src( $attachment_id , 'full' ); // returns an array
+		                echo '<img src="'.$image_attributes[0].'" alt="'.$imageAlt.'"/>';
+					}
 				}
 				?>
 				</div>
@@ -36,13 +36,13 @@
 			</article>
 		<?php endwhile; endif; ?>
 		<script type="text/javascript">
-			 $(function(){
-      $("#slides").slidesjs({
-        width: 960,
-        height: 320,
-        pagination: false
-      });
-    });
+			$(function(){
+		      $("#slides").slidesjs({
+		        width: 960,
+		        height: 320,
+		        pagination: false
+		      });
+		    });
 		</script>
 	</main><!-- #main -->
 <?php get_footer() ?>

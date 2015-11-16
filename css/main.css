@@ -1,11 +1,11 @@
 body {
 	background-color: #303342;
 	color: #fff;
-  min-width: 320px;
+	min-width: 320px;
 }
 header{
-  background-color: #363b4e;
-  padding-top: 20px;
+	background-color: #363b4e;
+	padding-top: 20px;
 }
 
 .page-wrapper {
@@ -17,7 +17,32 @@ header{
 
 main#main {
 	overflow: hidden;
-  min-height: 57vh;
+	min-height: 57vh;
+}
+
+header #logoContainer {
+    max-width: 960px;
+    margin: 0 auto;
+	position: relative;
+}
+
+header #logoContainer a {
+	margin: 0 auto;
+    display: block;
+}
+
+header #logoContainer form {
+	position: absolute;
+	right: 0;
+	top: 7px;
+}
+
+header #logoContainer form input[type="search"] {
+	padding: 6px;
+	width: 90px;
+}
+header #logoContainer form input[type="submit"] {
+	padding: 3px 6px;
 }
 
 nav {
