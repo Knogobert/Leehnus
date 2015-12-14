@@ -51,14 +51,14 @@
 			</div><!-- #fourth .widget-area -->
 		<?php endif; ?>
 		
-		</div><!-- #footer-widget-area -->
-		
-		
 		<?php if ( is_active_sidebar( 'footer_social' ) ) : ?>
-			<div id="footerWidgetArea" class="footer-widget-area" role="complementary">
+			<div id="social" class="footer-widget-area" role="complementary">
 				<?php dynamic_sidebar( 'footer_social' ); ?>
 			</div><!-- #primary-sidebar -->
 		<?php endif; ?>
+		
+		</div><!-- #footer-widget-area -->
+		
 		
 		<?php wp_nav_menu( array(
 			'menu' => 'footer menu',

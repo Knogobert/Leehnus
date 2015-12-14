@@ -88,9 +88,12 @@ nav {
 	color: #363B4E;
 }
 
-footer .footer-widget-area {
+footer #footerWidgetArea {
 	border-top: 1px solid #303342;
 	padding-top: 20px;
+}
+
+footer .footer-widget-area {
 	position: static;
 	display: flex;
 	flex-direction: row;

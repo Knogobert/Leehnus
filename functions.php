@@ -88,7 +88,7 @@ function leehnus_widgets_init() {
     register_sidebar( array(
         'name'          => 'Footer Social',
         'id'            => 'footer_social',
-        'before_widget' => '<div>',
+        'before_widget' => '<div class="widget-area">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',
