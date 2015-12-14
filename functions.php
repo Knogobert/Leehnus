@@ -84,7 +84,7 @@ add_action('init', 'leehnus_add_theme_support');
  *
  */
 function leehnus_widgets_init() {
-
+	// Area 1, located in the footer.
     register_sidebar( array(
         'name'          => 'Footer Social',
         'id'            => 'footer_social',
@@ -93,6 +93,50 @@ function leehnus_widgets_init() {
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',
     ) );
+    
+    // Area 2, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'First Footer Widget Area', 'leehnus' ),
+		'id' => 'first-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer.', 'leehnus' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	// Area 3, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Second Footer Widget Area', 'leehnus' ),
+		'id' => 'second-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer.', 'leehnus' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	// Area 4, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Third Footer Widget Area', 'leehnus' ),
+		'id' => 'third-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer.', 'leehnus' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	// Area 5, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Fourth Footer Widget Area', 'leehnus' ),
+		'id' => 'fourth-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer.', 'leehnus' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 
 }
 add_action( 'widgets_init', 'leehnus_widgets_init' );

@@ -54,7 +54,6 @@ nav {
 	border-top: 1px solid #303342;
 	border-bottom: 1px solid #303342;
 	
-	margin: 0;
 	padding: 0;
 /*
 	display: flex;
@@ -72,7 +71,6 @@ nav {
 .menu li {
     flex: 1 1 auto;
     align-self: auto;
-    width: 33%;
 }
 
 .menu li a {
@@ -89,8 +87,37 @@ nav {
 	background: #1EAEDB;
 	color: #363B4E;
 }
-.footer_menu{
-  float: right;
+
+footer .footer-widget-area {
+	border-top: 1px solid #303342;
+	padding-top: 20px;
+	position: static;
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+footer .footer-widget-area .widget-area{
+	flex: 1 1 auto;
+    align-self: flex-start;
+    background-color: #303342;
+    margin: 10px;
+    padding: 10px;
+}
+footer .footer-widget-area .search-form input.search-field {
+	width: 200px !important;	
+}
+.footer_menu {
+	border-top: 1px solid #303342;
+	padding-top: 10px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.footer_menu .page_item {
+	float: left;
+	margin: 10px;
 }
 
 figure img{
@@ -563,7 +590,6 @@ label > .label-body {
     margin: 0 auto;
     width: 30px;
   }
-<<<<<<< HEAD
 
   .aps-each-icon:first-child {
     float: left;
@@ -572,17 +598,21 @@ label > .label-body {
     float: right;
   }
 
-
-/*  RESPONSIV MAX-WIDTH 480PX  */
-=======
-
-/*  RESPONSIV Small */
->>>>>>> origin/master
-@media (max-width: 480px){
+/*  RESPONSIVE Small */
+@media screen and (max-width: 480px){
+  header #logoContainer form {
+    position: static;
+    margin: 0 auto;
+    width: 160px;
+  }
   .menu li a{
     padding: 1.2rem 0.3rem;
     letter-spacing: 1.2px;
     font-size: 1.8rem;
+  }
+  footer .widget-area{
+    margin: 5px;
+    padding: 5px;
   }
   footer p {
     line-height: 50px;

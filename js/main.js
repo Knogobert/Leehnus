@@ -30,13 +30,22 @@ function showResult(str) {
 // Defines the width depending on the string length of search entry
 window.onload = function() {
 	var sfh = document.getElementById('searchFieldHeader');
+	var mq480 = window.matchMedia( "(max-width: 480px)" );
 	if (sfh){
 		sfh.addEventListener("keyup", function(){
 			if (sfh.length==0) { 
 			    sfh.style.width = 90+"px";
 			}else{
-				if (sfh.value.length>5){
+				if (sfh.value.length>5&&sfh.value.length<20){
 					sfh.style.width = (10*sfh.value.length)+40+"px";
+					if (mq480.matches){
+						sfh.parentNode.style.width = (10*sfh.value.length)+120+"px";
+					}
+				}else if (sfh.value.length>=20){
+					sfh.style.width = 240+"px"; // (10*20)+40 = 240
+					if (mq480.matches){
+						sfh.parentNode.style.width = 310+"px";
+					}
 				}else {
 					sfh.style.width = 90+"px";
 				}
