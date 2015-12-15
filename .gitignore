@@ -1,0 +1,7 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Excluded files and folders
+Project info.txt
+underscores template/

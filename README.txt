@@ -1,9 +1,7 @@
-MANUAL LEEHNUS WORDPRESS THEME
+SOME COMPATIBLE TWEAKS FOR THE LEEHNUS WORDPRESS THEME:
 
 PLUGINS
 WooCommerce - The shop
-Master Slider - Slider on first page
-
 
 WIDGETS
 AccessPress Social icons - Social Icons in footer
