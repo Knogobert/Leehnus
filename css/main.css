@@ -178,7 +178,6 @@ article {
 
 .frontThumb img {
 	width: 100%;
-	height: 100%;
 }
 
 /* Gallery page
@@ -199,7 +198,6 @@ __________________________ */
 }
 .galleryList>li img {
   width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 640px){
@@ -243,7 +241,6 @@ __________________________ */
 }
 .products img {
 	width: 100%;
-	height: 100%;
 }
 .products h3{
   font-size: 25px;
@@ -274,7 +271,6 @@ __________________________ */
 
 .product .images img {
 	width: 100%;
-	height: 100%;
 }
 
 .product .summary {
@@ -401,7 +397,6 @@ __________________________ */
 
 .contactThumb img {
 	width: 100%; 
-	height: 100%;
 	border-radius: 5px;
 }
 
