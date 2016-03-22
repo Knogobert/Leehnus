@@ -241,6 +241,7 @@ __________________________ */
 }
 .products img {
 	width: 100%;
+	height: auto;
 }
 .products h3{
   font-size: 25px;
@@ -271,6 +272,7 @@ __________________________ */
 
 .product .images img {
 	width: 100%;
+	height: auto;
 }
 
 .product .summary {
