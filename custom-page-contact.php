@@ -3,6 +3,7 @@
 /* Template name: Contacts */
 	get_header() ?>
 	<main id="main" class="site-main" role="main">
+		<h1><?php the_title() ?></h1>
 		<div class="contactsContainer">
 		<?php
 			// Checks how many posts there are and styles the contactsContainer to it.
